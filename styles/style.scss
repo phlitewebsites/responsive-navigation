@@ -1,0 +1,161 @@
+@import 'normalize';
+@import 'base';
+
+////////////////////////////////////////////////////////////////////////////////
+// Open / Close styles
+////////////////////////////////////////////////////////////////////////////////
+
+.menu__open {
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 22px;
+  line-height: 22px;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+.offcanvas-menu__close {
+  color: #999;
+  cursor: pointer;
+  display: block !important;
+  font-size: 2em;
+  padding: 0 .5em;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  Off-canvas Menu styles
+////////////////////////////////////////////////////////////////////////////////
+
+$menu-width: 200px;
+$color-menu: #333;
+%box-shadow { box-shadow: inset -1.5em 0 1.5em -.75em rgba(0, 0, 0, .25); }
+
+html,
+.offcanvas-menu {
+  background: $color-menu;
+}
+
+.offcanvas-menu {
+  @extend %box-shadow;
+  color: #fff;
+  font-weight: normal;
+  height: 100vh;
+  left: 0;
+  max-width: 90%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: $menu-width;
+
+  .offcanvas-menu__list {
+    margin: 0;
+    padding: 0;
+
+    ul {
+      display: none;
+    }
+
+    .nested-open {
+      position: relative;
+
+      ul {
+        @extend %box-shadow;
+        background: #444;
+        display: block;
+        padding-left: 1em;
+        position: relative;
+        z-index: 1;
+      }
+    }
+  }
+
+  li {
+    border: 0;
+    border-color: rgba(255, 255, 255, .1);
+    border-style: solid;
+    border-top-width: 1px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &:last-child { border-bottom-width: 1px; }
+
+    a {
+      color: #fff;
+      display: block;
+      font-size: em(16);
+      padding: .5em .5em .5em 1em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &.active, &:focus, &:hover {
+        @extend %box-shadow;
+        background: rgba(255, 255, 255, .1);
+        text-decoration: none;
+      }
+
+      &.active { background: #00f; }
+    }
+  }
+}
+
+.offcanvas-menu__toggle-nested {
+  background: rgba(255, 255, 255, .1);
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+
+  &:after {
+    border: 8px solid transparent;
+    border-top: 10px solid;
+    color: inherit;
+    content: '';
+    display: block;
+    position: absolute;
+    right: 7px;
+    top: 16px;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//  Transforms
+////////////////////////////////////////////////////////////////////////////////
+
+.csstransforms {
+  .body__wrap {
+    transform: translate(0, 0);
+    transition: transform .5s ease;
+  }
+
+  .offcanvas-menu {
+    transform: translateX(-($menu-width/2));
+    transition: transform .5s ease;
+  }
+}
+
+.offcanvas-menu--active {
+
+  .body__overlay {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9999999999;
+  }
+
+  &.no-csstransforms {
+    .body__wrap { left: $menu-width; }
+  }
+
+  &.csstransforms {
+    .body__wrap { transform: translateX($menu-width); }
+
+    .offcanvas-menu { transform: translateX(0); }
+  }
+
+}

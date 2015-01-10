@@ -1,0 +1,48 @@
+{
+  "name": "responsive-nav",
+  "version": "0.0.1",
+  "description": "lean off canvas navigation",
+  "main": "index.js",
+  "scripts": {
+    "build:scripts": "browserify -p bundle-collapser/plugin index.js | uglifyjs > build/nav.js",
+    "watch:scripts": "watch 'npm run build:scripts' lib",
+    "build:styles": "node-sass styles/style.scss build/style.css && autoprefixer build/style.css && cleancss -o build/style.css build/style.css",
+    "watch:styles": "watch 'npm run build:styles' styles",
+    "build:": "npm run build:scripts && npm run build:styles",
+    "watch": "parallelshell 'npm run watch:scripts' 'npm run watch:styles'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pythonic1/responsive-navigation.git"
+  },
+  "keywords": [
+    "offcanvas",
+    "menu",
+    "nav",
+    "navigation",
+    "responsive",
+    "css3",
+    "browserify"
+  ],
+  "author": {
+    "name": "Pythonic",
+    "email": "pythonic1@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pythonic1/responsive-navigation/issues"
+  },
+  "homepage": "https://github.com/pythonic1/responsive-navigation",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^4.0.0",
+    "browserify": "^8.1.0",
+    "bundle-collapser": "^1.1.1",
+    "clas": "0.0.9",
+    "clean-css": "^3.0.3",
+    "node-sass": "^2.0.0-beta",
+    "parallelshell": "^1.0.3",
+    "uglify-js": "^2.4.16",
+    "watch": "^0.13.0"
+  }
+}
