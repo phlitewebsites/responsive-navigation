@@ -2,6 +2,7 @@
 
 Description to go here
 
+[Demo](http://pythonic1.github.io/responsive-navigation/)
 
 ## Usage
 
