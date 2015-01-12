@@ -38,7 +38,6 @@
     "autoprefixer": "^4.0.0",
     "browserify": "^8.1.0",
     "bundle-collapser": "^1.1.1",
-    "clas": "0.0.9",
     "clean-css": "^3.0.3",
     "node-sass": "^2.0.0-beta",
     "parallelshell": "^1.0.3",
