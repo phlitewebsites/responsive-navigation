@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build:scripts": "browserify -p bundle-collapser/plugin index.js | uglifyjs > build/nav.js",
-    "watch:scripts": "watch 'npm run build:scripts' lib",
+    "watch:scripts": "watch \"npm run build:scripts\" lib",
     "build:styles": "node-sass styles/style.scss build/style.css && autoprefixer build/style.css && cleancss -o build/style.css build/style.css",
-    "watch:styles": "watch 'npm run build:styles' styles",
+    "watch:styles": "watch \"npm run build:styles\" styles",
     "build:": "npm run build:scripts && npm run build:styles",
-    "watch": "parallelshell 'npm run watch:scripts' 'npm run watch:styles'"
+    "watch": "parallelshell \"npm run watch:scripts\" \"npm run watch:styles\""
   },
   "repository": {
     "type": "git",
