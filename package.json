@@ -33,7 +33,9 @@
     "url": "https://github.com/pythonic1/responsive-navigation/issues"
   },
   "homepage": "https://github.com/pythonic1/responsive-navigation",
-  "dependencies": {},
+  "dependencies": {
+    "clas": "0.0.9"
+  },
   "devDependencies": {
     "autoprefixer": "^4.0.0",
     "browserify": "^8.1.0",
