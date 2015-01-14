@@ -38,10 +38,10 @@
     "lodash.foreach": "^2.4.1"
   },
   "devDependencies": {
-    "autoprefixer": "^4.0.0",
+    "autoprefixer": "^5.0.0",
     "browserify": "^8.1.0",
     "bundle-collapser": "^1.1.1",
-    "clean-css": "^3.0.3",
+    "clean-css": "^3.0.4",
     "node-sass": "^2.0.0-beta",
     "parallelshell": "^1.0.3",
     "uglify-js": "^2.4.16",
