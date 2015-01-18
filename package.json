@@ -1,6 +1,6 @@
 {
   "name": "responsive-nav",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "lean off canvas navigation",
   "main": "index.js",
   "scripts": {
