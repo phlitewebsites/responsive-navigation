@@ -1,1 +1,1 @@
-require('./lib/menu');
+module.exports = require('./lib/menu');
