@@ -122,7 +122,7 @@ html,
 //  Transforms
 ////////////////////////////////////////////////////////////////////////////////
 
-.csstransforms {
+.transform {
   .body__wrap {
     transform: translate(0, 0);
     transition: transform .5s ease;
@@ -145,11 +145,11 @@ html,
     z-index: 9999999999;
   }
 
-  &.no-csstransforms {
+  &.no-transform {
     .body__wrap { left: $menu-width; }
   }
 
-  &.csstransforms {
+  &.transform {
     .body__wrap { transform: translateX($menu-width); }
 
     .offcanvas-menu { transform: translateX(0); }
