@@ -1,20 +1,31 @@
-[![Dependency Status](https://david-dm.org/pythonic1/responsive-navigation.svg?style=flat-square)](https://david-dm.org/pythonic1/responsive-navigation)
-[![devDependency Status](https://david-dm.org/pythonic1/responsive-navigation/dev-status.svg?style=flat-square)](https://david-dm.org/pythonic1/responsive-navigation#info=devDependencies)
+![status] ![dev-status] ![standard]
 
-# Responsive Nav
+# Responsive Navigation
 
-Description to go here
-
-[Demo](http://pythonic1.github.io/responsive-navigation/)
+[Demo]
 
 ## Usage
 
+```js
+var menu = require('responsive-navigation')
+
+// One list
+menu('#main-nav')
+
+// or multiple lists
+menu(['#pre-nav', '#main-nav', '#post-nav'])
+```
+
+#### Browser Support
+
+* Internet Explorer 9+
+* Chrome (latest)
+* FireFox (latest)
+* Safari (latest)
 
 
-### One list
+[status]: https://david-dm.org/pythonic1/responsive-navigation.svg
+[dev-status]: https://david-dm.org/pythonic1/responsive-navigation/dev-status.svg
+[standard]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 
-    responsiveNav('selector');
-
-### Multiple lists
-
-    responsiveNav(['selector', 'selector', ...]);
+[Demo]: http://pythonic1.github.io/responsive-navigation/
