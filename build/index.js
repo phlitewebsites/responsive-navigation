@@ -1,16 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-'use strict'
-
-var menu = require(2)
-menu(['#pre-nav', '#main-nav', '#post-nav'])
-
-},{"2":2}],2:[function(require,module,exports){
 (function (global){
 'use strict'
 
-var clas = require(3)
-var forEach = require(5)
-var extend = require(4)
+var clas = require(2)
+var forEach = require(4)
+var extend = require(3)
 var doc = global.document
 
 var opts = {
@@ -123,7 +117,7 @@ function cloneItems (lists, elNavList) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"3":3,"4":4,"5":5}],3:[function(require,module,exports){
+},{"2":2,"3":3,"4":4}],2:[function(require,module,exports){
 function indexOf(arr, item) {
 	return Array.prototype.indexOf.call(arr, item);
 }
@@ -184,7 +178,7 @@ module.exports = {
 	remove: remove,
 	toggle: toggle,
 };
-},{}],4:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var hasOwn = Object.prototype.hasOwnProperty;
 var toStr = Object.prototype.toString;
 var undefined;
@@ -275,7 +269,7 @@ module.exports = function extend() {
 };
 
 
-},{}],5:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /**
  * lodash 3.0.3 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -284,10 +278,10 @@ module.exports = function extend() {
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
-var arrayEach = require(6),
-    baseEach = require(7),
-    bindCallback = require(11),
-    isArray = require(12);
+var arrayEach = require(5),
+    baseEach = require(6),
+    bindCallback = require(10),
+    isArray = require(11);
 
 /**
  * Creates a function for `_.forEach` or `_.forEachRight`.
@@ -339,7 +333,7 @@ var forEach = createForEach(arrayEach, baseEach);
 
 module.exports = forEach;
 
-},{"11":11,"12":12,"6":6,"7":7}],6:[function(require,module,exports){
+},{"10":10,"11":11,"5":5,"6":6}],5:[function(require,module,exports){
 /**
  * lodash 3.0.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -372,7 +366,7 @@ function arrayEach(array, iteratee) {
 
 module.exports = arrayEach;
 
-},{}],7:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  * lodash 3.0.4 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -381,7 +375,7 @@ module.exports = arrayEach;
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
-var keys = require(8);
+var keys = require(7);
 
 /**
  * Used as the [maximum length](https://people.mozilla.org/~jorendorff/es6-draft.html#sec-number.max_safe_integer)
@@ -555,7 +549,7 @@ function isObject(value) {
 
 module.exports = baseEach;
 
-},{"8":8}],8:[function(require,module,exports){
+},{"7":7}],7:[function(require,module,exports){
 /**
  * lodash 3.1.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -564,9 +558,9 @@ module.exports = baseEach;
  * Copyright 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <https://lodash.com/license>
  */
-var getNative = require(9),
-    isArguments = require(10),
-    isArray = require(12);
+var getNative = require(8),
+    isArguments = require(9),
+    isArray = require(11);
 
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
@@ -793,7 +787,7 @@ function keysIn(object) {
 
 module.exports = keys;
 
-},{"10":10,"12":12,"9":9}],9:[function(require,module,exports){
+},{"11":11,"8":8,"9":9}],8:[function(require,module,exports){
 /**
  * lodash 3.9.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -926,7 +920,7 @@ function escapeRegExp(string) {
 
 module.exports = getNative;
 
-},{}],10:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 /**
  * lodash 3.0.3 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -1036,7 +1030,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /**
  * lodash 3.0.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -1103,7 +1097,7 @@ function identity(value) {
 
 module.exports = bindCallback;
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
  * lodash 3.0.3 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`

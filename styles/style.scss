@@ -1,158 +1,186 @@
-////////////////////////////////////////////////////////////////////////////////
-// Open / Close styles
-////////////////////////////////////////////////////////////////////////////////
+$responsive-navigation-open_color: #fff;
 
-.menu__open {
-  color: #333;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 22px;
-  line-height: 22px;
-  text-transform: uppercase;
-  vertical-align: top;
+$responsive-navigation_background: #333;
+$responsive-navigation_color: #fff;
+$responsive-navigation_width: 300px;
+$responsive-navigation_open-side: right;
+
+$border-color: rgba(#ccc, .5);
+$border-style: solid;
+$border-width: 1px;
+
+%box-shadow { box-shadow: -5px 0 10px rgba(#000, .3) inset; }
+
+@mixin bp($min: 0, $max: 0) {
+  @if $min != 0 and $max != 0 {
+    // set both min and max
+    $query: '(min-width: #{$min}) and (max-width: #{$max})';
+  } @else if $min != 0 and $max == 0 {
+    // set just min
+    $query: '(min-width: #{$min})';
+  } @else if $min == 0 and $max != 0 {
+    // set just max
+    $query: '(max-width: #{$max})';
+  }
+
+  @media #{$query} { @content; }
 }
 
-.offcanvas-menu__close {
+////
+//  Transforms
+
+.responsive-navigation--active {
+
+  .responsive-navigation {
+    #{$responsive-navigation_open-side}: 0;
+    transition: #{$responsive-navigation_open-side} .5s ease;
+  }
+
+  .body__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+  }
+}
+
+////
+// Open / Close styles
+
+
+.responsive-navigation__open {
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  color: $responsive-navigation-open_color;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 38px;
+  line-height: (20/38);
+  top: 55px;
+  z-index: 99;
+  padding: 10px 0;
+  min-height: 30px;
+
+  span {
+    font-size: 1.3em;
+    position: relative;
+    top: .05em;
+    text-shadow: 0 1px;
+  }
+
+  @include bp(desktop) {
+    display: none;
+  }
+}
+
+.responsive-navigation__close {
   color: #999;
   cursor: pointer;
   display: block !important;
-  font-size: 2em;
-  padding: 0 .5em;
+  padding: .5em;
+  text-align: center;
+
+  &:hover {
+    background: rgba(255, 255, 255, .1);
+    text-decoration: none;
+  }
+
 }
 
-////////////////////////////////////////////////////////////////////////////////
+////
 //  Off-canvas Menu styles
-////////////////////////////////////////////////////////////////////////////////
 
-$menu-width: 200px;
-$color-menu: #333;
-%box-shadow { box-shadow: inset -1.5em 0 1.5em -.75em rgba(0, 0, 0, .25); }
 
-html,
-.offcanvas-menu {
-  background: $color-menu;
+
+.responsive-navigation {
+  @include bp(desktop) {
+    display: none !important;
+  }
+  background: $responsive-navigation_background;
 }
 
-.offcanvas-menu {
+.responsive-navigation {
   @extend %box-shadow;
-  color: #fff;
+  color: $responsive-navigation_color;
   font-weight: normal;
   height: 100vh;
-  left: 0;
-  max-width: 90%;
   overflow: auto;
+  padding: 1em;
   position: fixed;
   top: 0;
-  width: $menu-width;
+  width: $responsive-navigation_width;
+  max-width: 100%;
+  z-index: 99999;
+  #{$responsive-navigation_open-side}: -$responsive-navigation_width;
+}
 
-  .offcanvas-menu__list {
-    margin: 0;
-    padding: 0;
-
-    ul {
-      display: none;
-    }
-
-    .nested-open {
-      position: relative;
-
-      ul {
-        @extend %box-shadow;
-        background: #444;
-        display: block;
-        padding-left: 1em;
-        position: relative;
-        z-index: 1;
-      }
-    }
-  }
+.responsive-navigation__navigation {
 
   li {
     border: 0;
-    border-color: rgba(255, 255, 255, .1);
-    border-style: solid;
-    border-top-width: 1px;
+    border-color: $border-color;
+    border-style: $border-style;
+    border-top-width: $border-width;
     display: block;
     margin: 0;
     padding: 0;
     position: relative;
 
-    &:last-child { border-bottom-width: 1px; }
+    &:last-child { border-bottom-width: $border-width; }
 
-    a {
-      color: #fff;
-      display: block;
-      font-size: em(16);
-      padding: .5em .5em .5em 1em;
-      text-decoration: none;
-      text-transform: uppercase;
+    ul {
+      display: none;
+      border-top: 0;
+      background: rgba(255, 255, 255, .1);
 
-      &.active, &:focus, &:hover {
-        @extend %box-shadow;
-        background: rgba(255, 255, 255, .1);
-        text-decoration: none;
+      li:first-child a {
+        border-top: 0;
       }
+    }
+  }
 
-      &.active { background: #00f; }
+  .nested-open {
+    ul {
+      display: block;
+    }
+  }
+
+  a {
+    color: $responsive-navigation_color !important;
+    display: block;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .75em;
+
+    &.active,
+    &:focus,
+    &:hover {
+      background: rgba(255, 255, 255, .1);
+      text-decoration: none;
     }
   }
 }
 
-.offcanvas-menu__toggle-nested {
-  background: rgba(255, 255, 255, .1);
-  bottom: 0;
+.responsive-navigation__toggle-nested {
   position: absolute;
-  right: 0;
   top: 0;
+  right: 0;
+  bottom: 0;
   width: 30px;
+  background: rgba(255, 255, 255, .1);
 
   &:after {
-    border: 8px solid transparent;
-    border-top: 10px solid;
-    color: inherit;
     content: '';
+    color: inherit;
     display: block;
     position: absolute;
     right: 7px;
     top: 16px;
+    border: 8px solid transparent;
+    border-top: 10px solid;
   }
-}
-
-////////////////////////////////////////////////////////////////////////////////
-//  Transforms
-////////////////////////////////////////////////////////////////////////////////
-
-.transform {
-  .body__wrap {
-    transform: translate(0, 0);
-    transition: transform .5s ease;
-  }
-
-  .offcanvas-menu {
-    transform: translateX(-($menu-width/2));
-    transition: transform .5s ease;
-  }
-}
-
-.offcanvas-menu--active {
-
-  .body__overlay {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 9999999999;
-  }
-
-  &.no-transform {
-    .body__wrap { left: $menu-width; }
-  }
-
-  &.transform {
-    .body__wrap { transform: translateX($menu-width); }
-
-    .offcanvas-menu { transform: translateX(0); }
-  }
-
 }
