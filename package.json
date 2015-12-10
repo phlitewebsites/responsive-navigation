@@ -1,7 +1,7 @@
 {
   "name": "responsive-navigation",
   "description": "lean off canvas navigation",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": {
     "name": "Pythonic",
     "email": "pythonic1@gmail.com"
@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "clas": "0.0.9",
-    "extend": "^2.0.1",
+    "lodash.assign": "^3.2.0",
     "lodash.foreach": "^3.0.3"
   },
   "homepage": "https://github.com/pythonic1/responsive-navigation",
   "keywords": [],
   "license": "MIT",
-  "main": "lib/",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/pythonic1/responsive-navigation.git"

@@ -1,4 +1,4 @@
-![status] ![dev-status] ![standard]
+![semistandard]
 
 # Responsive Navigation
 
@@ -18,10 +18,8 @@ menu(['#pre-nav', '#main-nav', '#post-nav'])
 
 * Internet Explorer 9+
 * Chrome (latest)
+* Edge (latest)
 * FireFox (latest)
 * Safari (latest)
 
-
-[status]: https://david-dm.org/pythonic1/responsive-navigation.svg
-[dev-status]: https://david-dm.org/pythonic1/responsive-navigation/dev-status.svg
-[standard]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg
+[semistandard]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg
