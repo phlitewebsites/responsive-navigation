@@ -14,27 +14,8 @@
     "extend": "^2.0.1",
     "lodash.foreach": "^3.0.3"
   },
-  "devDependencies": {
-    "browserify": "^10.2.4",
-    "bundle-collapser": "^1.2.0",
-    "glob": "^5.0.10",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-plumber": "^1.0.1",
-    "gulp-sass": "^2.0.1",
-    "gulp-util": "^3.0.5",
-    "vinyl-source-stream": "^1.1.0"
-  },
   "homepage": "https://github.com/pythonic1/responsive-navigation",
-  "keywords": [
-    "browserify",
-    "css3",
-    "menu",
-    "nav",
-    "navigation",
-    "offcanvas",
-    "responsive"
-  ],
+  "keywords": [],
   "license": "MIT",
   "main": "lib/",
   "repository": {

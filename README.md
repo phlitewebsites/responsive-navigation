@@ -2,8 +2,6 @@
 
 # Responsive Navigation
 
-[Demo]
-
 ## Usage
 
 ```js
@@ -27,5 +25,3 @@ menu(['#pre-nav', '#main-nav', '#post-nav'])
 [status]: https://david-dm.org/pythonic1/responsive-navigation.svg
 [dev-status]: https://david-dm.org/pythonic1/responsive-navigation/dev-status.svg
 [standard]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
-
-[Demo]: http://pythonic1.github.io/responsive-navigation/
