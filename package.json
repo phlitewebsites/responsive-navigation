@@ -23,11 +23,14 @@
     "url": "https://github.com/pythonic1/responsive-navigation.git"
   },
   "scripts": {
-    "test": "standard --format"
+    "test": "semistandard --format"
   },
-  "standard": {
+  "semistandard": {
     "ignore": [
       "build/**"
     ]
+  },
+  "devDependencies": {
+    "semistandard": "^7.0.4"
   }
 }
