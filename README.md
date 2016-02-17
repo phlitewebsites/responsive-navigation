@@ -1,4 +1,7 @@
-![semistandard] ![deps] ![dev-deps]
+![tag](https://img.shields.io/github/tag/danhayden/responsive-navigation.svg)
+![code style](https://img.shields.io/badge/code_style-semistandard-brightgreen.svg)
+![dependencies](https://img.shields.io/david/danhayden/responsive-navigation.svg)
+![decDependencies](https://img.shields.io/david/dev/danhayden/responsive-navigation.svg)
 
 # Responsive Navigation
 
@@ -21,7 +24,3 @@ menu(['#pre-nav', '#main-nav', '#post-nav'])
 * FireFox (latest)
 * Safari (latest)
 * Internet Explorer 11
-
-[semistandard]: https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg
-[deps]: https://david-dm.org/danhayden/responsive-navigation.svg
-[dev-deps]: https://david-dm.org/danhayden/responsive-navigation/dev-status.svg
