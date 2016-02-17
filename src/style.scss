@@ -9,8 +9,8 @@ $responsive-navigation_border-width: 0 0 2px 0 !default;
 /**
  *  Transforms
  */
-.offcanvas-menu--active {
-  .offcanvas-menu {
+.responsive-navigation--active {
+  .responsive-navigation {
     left: 0;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.3);
   }
@@ -26,14 +26,9 @@ $responsive-navigation_border-width: 0 0 2px 0 !default;
 }
 
 /**
- * Open / Close
+ * Close
  */
-.offcanvas-menu__open {
-  cursor: pointer;
-  display: block;
-}
-
-.offcanvas-menu__close {
+.responsive-navigation__close {
   clear: both;
 
   &:hover {
@@ -51,7 +46,7 @@ $responsive-navigation_border-width: 0 0 2px 0 !default;
 /**
  *  Off-canvas Menu
  */
-.offcanvas-menu {
+.responsive-navigation {
   background: $responsive-navigation_background;
   color: $responsive-navigation_color;
   font-weight: normal;
@@ -67,7 +62,7 @@ $responsive-navigation_border-width: 0 0 2px 0 !default;
   transition: left .5s ease;
 }
 
-.offcanvas-menu__navigation {
+.responsive-navigation__navigation {
   ul {
     margin: 0;
   }
@@ -119,7 +114,7 @@ $responsive-navigation_border-width: 0 0 2px 0 !default;
 /**
  * Nested list button
  */
-.offcanvas-menu__toggle-nested {
+.responsive-navigation__toggle-nested {
   background: inherit;
   width: 30px;
   bottom: 0;

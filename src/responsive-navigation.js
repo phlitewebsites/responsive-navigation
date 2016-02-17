@@ -13,15 +13,15 @@ module.exports = function (elems, options = {}) {
   if (typeof elems === 'string') elems = [elems];
 
   opts = assign({
-    openElemID: 'offcanvas-menu__open',
     wrapID: 'body__content',
     overlayID: 'body__overlay',
-    menuClass: 'offcanvas-menu',
-    navClass: 'offcanvas-menu__navigation',
-    activeClass: 'offcanvas-menu--active',
-    closeClass: 'offcanvas-menu__close',
-    listClass: 'offcanvas-menu__list',
-    buttonClass: 'offcanvas-menu__toggle-nested',
+    menuClass: 'responsive-navigation',
+    activeClass: 'responsive-navigation--active',
+    buttonClass: 'responsive-navigation__toggle-nested',
+    closeClass: 'responsive-navigation__close',
+    listClass: 'responsive-navigation__list',
+    navClass: 'responsive-navigation__navigation',
+    openElemID: 'responsive-navigation__open',
     closeText: '<div>&times; Close</div>'
   }, options);
 
@@ -59,7 +59,7 @@ module.exports = function (elems, options = {}) {
   /**
    * Event Listeners
    */
-  elOpen = document.getElementById('offcanvas-menu__open');
+  elOpen = document.getElementById('responsive-navigation__open');
   elOpen.addEventListener('click', toggleMenu);
   elClose.addEventListener('click', toggleMenu);
 
@@ -101,7 +101,7 @@ var cloneItems = function (lists) {
 
     Array.prototype.forEach.call(list.querySelectorAll('li'), function (el, idx) {
       if (el.parentNode !== list ||
-        el.getAttribute('data-offcanvasmenu') === 'false') return;
+        el.getAttribute('data-responsive-navigation') === 'false') return;
 
       if (el.querySelectorAll('ul').length) addSubMenu(el);
 
