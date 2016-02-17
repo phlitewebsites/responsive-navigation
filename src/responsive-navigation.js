@@ -1,8 +1,4 @@
-var document = global.document;
-
-var assign = require('lodash.assign');
-var forEach = require('lodash.foreach');
-var clas = require('clas');
+const assign = require('object-assign');
 
 var elButton;
 var elClose;
@@ -13,9 +9,8 @@ var elOpen;
 var elOverlay;
 var opts;
 
-module.exports = function (elems, options) {
+module.exports = function (elems, options = {}) {
   if (typeof elems === 'string') elems = [elems];
-  options = options || {};
 
   opts = assign({
     openElemID: 'offcanvas-menu__open',
@@ -80,14 +75,14 @@ module.exports = function (elems, options) {
  */
 var toggleMenu = function (event) {
   event.preventDefault();
-  clas.toggle(document.documentElement, opts.activeClass);
+  document.documentElement.classList.toggle(opts.activeClass);
 };
 
 var addSubMenu = function (el) {
   var elToggleButton = elButton.cloneNode(true);
 
   elToggleButton.addEventListener('click', function () {
-    clas.toggle(el, 'nested-open');
+    el.classList.toggle('nested-open');
   });
 
   el.insertBefore(elToggleButton, el.firstChild);
@@ -96,7 +91,7 @@ var addSubMenu = function (el) {
 var cloneItems = function (lists) {
   var error = null;
 
-  forEach(lists, function (listID, listNo) {
+  lists.forEach(function (listID, listNo) {
     var list = document.querySelector(listID);
     if (list === null) {
       error = true;
@@ -104,7 +99,7 @@ var cloneItems = function (lists) {
     }
     list = list.cloneNode(true);
 
-    forEach(list.querySelectorAll('li'), function (el, idx) {
+    Array.prototype.forEach.call(list.querySelectorAll('li'), function (el, idx) {
       if (el.parentNode !== list ||
         el.getAttribute('data-offcanvasmenu') === 'false') return;
 
